@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Twitelum</string>
+    <string name="usuario">Usuário</string>
+    <string name="usuario_dica">hannaMontana</string>
+    <string name="senha">Senha</string>
+    <string name="senha_dica">*******</string>
+    <string name="entrar">Entrar</string>
+</resources>
