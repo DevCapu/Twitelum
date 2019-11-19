@@ -4,7 +4,6 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
@@ -48,7 +47,7 @@ public class ListaTweetAdapter extends BaseAdapter {
 
     private void vinculaAlunoComView(View viewCriada, Tweet tweetDevolvido) {
         TextView usuario = viewCriada.findViewById(R.id.item_tweet_usuario);
-        usuario.setText(tweetDevolvido.getUsuario().getUsuario());
+        usuario.setText("@" + tweetDevolvido.getUsuario().getUsuario());
 
         TextView texto = viewCriada.findViewById(R.id.item_tweet_texto);
         texto.setText(tweetDevolvido.getTexto());

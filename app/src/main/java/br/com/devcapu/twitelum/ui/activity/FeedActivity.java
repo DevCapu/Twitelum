@@ -28,8 +28,12 @@ public class FeedActivity extends AppCompatActivity {
 
         TweetDAO tweetDao = new TweetDAO();
 
-        Tweet tweet = new Tweet(felipe, "São Paulo é estranho");
-        tweetDao.salva(tweet);
+        Tweet tweet1 = new Tweet(felipe, "São Paulo é estranho");
+        Tweet tweet2 = new Tweet(felipe, "Rio de Janeiro é bem pior");
+
+        tweetDao.salva(tweet1);
+        tweetDao.salva(tweet2);
+
         configuraLista();
     }
 
