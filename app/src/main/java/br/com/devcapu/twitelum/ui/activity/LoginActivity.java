@@ -3,6 +3,7 @@ package br.com.devcapu.twitelum.ui.activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -36,14 +37,17 @@ public class LoginActivity extends AppCompatActivity {
                 boolean usuarioPodeEntrar = verificaSeUsuarioPodeEntrar(valorCampoUsuario, valorCampoSenha);
 
                 if (usuarioPodeEntrar) {
-                    Toast.makeText(context, "Entrou", Toast.LENGTH_LONG)
-                            .show();
+                    entraNoFeed();
                 } else {
                     Toast.makeText(context, "Não entrou", Toast.LENGTH_LONG)
                             .show();
                 }
             }
         });
+    }
+
+    private void entraNoFeed() {
+        startActivity(new Intent(this, FeedActivity.class));
     }
 
     private boolean verificaSeUsuarioPodeEntrar(String valorCampoUsuario, String valorCampoSenha) {
