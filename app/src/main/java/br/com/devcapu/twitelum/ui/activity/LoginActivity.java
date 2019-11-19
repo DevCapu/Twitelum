@@ -31,11 +31,11 @@ public class LoginActivity extends AppCompatActivity {
                 EditText campoSenha = findViewById(R.id.activity_login_input_senha);
 
                 String valorCampoUsuario = campoUsuario.getText().toString();
-                Log.i("Campo usuário", "valorCampoUsuario: " + valorCampoUsuario);
                 String valorCampoSenha = campoSenha.getText().toString();
-                Log.i("Campo usuário", "valorCampoSenha: " + valorCampoSenha);
 
-                if (valorCampoUsuario.equals("DevCapu") && valorCampoSenha.equals("123456")) {
+                boolean usuarioPodeEntrar = verificaSeUsuarioPodeEntrar(valorCampoUsuario, valorCampoSenha);
+
+                if (usuarioPodeEntrar) {
                     Toast.makeText(context, "Entrou", Toast.LENGTH_LONG)
                             .show();
                 } else {
@@ -44,5 +44,9 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private boolean verificaSeUsuarioPodeEntrar(String valorCampoUsuario, String valorCampoSenha) {
+        return valorCampoUsuario.equals("DevCapu") && valorCampoSenha.equals("123456");
     }
 }
