@@ -2,9 +2,13 @@ package br.com.devcapu.twitelum.ui.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CpuUsageInfo;
+import android.view.View;
 import android.widget.ListView;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +39,7 @@ public class FeedActivity extends AppCompatActivity {
         tweetDao.salva(tweet2);
 
         configuraLista();
+        configuraDeNovoTweet();
     }
 
     @Override
@@ -46,5 +51,19 @@ public class FeedActivity extends AppCompatActivity {
     private void configuraLista() {
         ListView listaTweets = findViewById(R.id.activity_feed_lista_tweets);
         feedView.configuraAdapter(listaTweets);
+    }
+
+    private void configuraDeNovoTweet() {
+        FloatingActionButton floatActionButton = findViewById(R.id.activity_feed_fab_novo_tweet);
+        floatActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                abreFormularioNovoTweet();
+            }
+        });
+    }
+
+    private void abreFormularioNovoTweet() {
+        startActivity(new Intent(this, FormularioNovoTweetActivity.class));
     }
 }

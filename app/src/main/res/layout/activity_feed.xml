@@ -15,7 +15,7 @@
     </ListView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/activity_lista_alunos_fab_novo_aluno"
+        android:id="@+id/activity_feed_fab_novo_tweet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
